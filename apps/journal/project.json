@@ -1,0 +1,63 @@
+{
+  "root": "apps/journal",
+  "sourceRoot": "apps/journal/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/journal",
+        "index": "apps/journal/src/index.html",
+        "baseHref": "/",
+        "main": "apps/journal/src/index.js",
+        "tsConfig": "apps/journal/tsconfig.app.json",
+        "assets": ["apps/journal/src/favicon.ico", "apps/journal/src/assets"],
+        "styles": ["apps/journal/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "journal:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "journal:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/journal/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/journal"],
+      "options": {
+        "jestConfig": "apps/journal/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

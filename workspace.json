@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "journal": "apps/journal",
+    "journal-e2e": "apps/journal-e2e"
+  }
+}
