@@ -1,6 +1,6 @@
 import * as ReactDOM from 'react-dom';
 import { JournalApp } from './JournalApp';
-import './styles.scss';
+import './styles/styles.scss';
 
 ReactDOM.render(
   <JournalApp />,

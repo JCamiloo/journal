@@ -15,7 +15,7 @@
         "main": "apps/journal/src/index.js",
         "tsConfig": "apps/journal/tsconfig.app.json",
         "assets": ["apps/journal/src/favicon.ico", "apps/journal/src/assets"],
-        "styles": ["apps/journal/src/styles.scss"],
+        "styles": ["apps/journal/src/styles/styles.scss"],
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"
       },
